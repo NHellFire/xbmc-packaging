@@ -52,7 +52,7 @@ XBMC_CONFIG_OPTIONS ?= --host=$(DEB_HOST_GNU_TYPE) \
   --disable-mid \
   --enable-hal \
   --enable-avahi \
-  --disable-asap-codec \
+  --enable-asap-codec \
   --enable-webserver \
   --enable-optical-drive \
   --enable-texturepacker \
