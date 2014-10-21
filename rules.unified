@@ -100,7 +100,7 @@ override_dh_install:
 		-XLicence.txt -XLicense.txt -XLiberationSans-Regular.ttf \
 		-XDejaVuSans.ttf -XDejaVuSans-Bold.ttf
 	# Delete license file from package
-	rm -f debian/xbmc/usr/share/xbmc/addons/script.recentlyadded/LICENSE.txt
+	rm -f debian/xbmc/usr/share/kodi/addons/script.recentlyadded/LICENSE.txt
 
 override_dh_makeshlibs:
 	# We don't install shared libraries in standard locations so don't run
@@ -111,7 +111,7 @@ override_dh_auto_test:
 
 override_dh_shlibdeps: debian/tmp/xbmc-bin-dummy.so
 	dh_shlibdeps -a -O--parallel \
-		-l$(CURDIR)/debian/xbmc-bin/usr/lib/xbmc/system/players/dvdplayer
+		-l$(CURDIR)/debian/xbmc-bin/usr/lib/kodi/system/players/dvdplayer
 	# Need to manually add dependencies for dlopened libs.
 	dpkg-shlibdeps -dRecommends -edebian/tmp/xbmc-bin-dummy.so -xlibc6 -O >>debian/xbmc-bin.substvars
 
